@@ -16,7 +16,7 @@ export default function OperatingCitiesSection() {
 
   return (
     <section aria-label="Operating across major cities">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 sm:px-8 lg:px-6">
+      <div className="pb-16">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           Operating across major cities
         </h2>

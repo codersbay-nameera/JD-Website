@@ -84,7 +84,7 @@ function TeamCard({ member }) {
 export default function TeamSection() {
   return (
     <section aria-label="Meet the team">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-4 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-4">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           Meet the Team Behind JustDeliveries
         </h2>

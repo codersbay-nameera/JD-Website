@@ -67,15 +67,7 @@ p {
 }
 
 .page-layout-padding {
-  padding-right: var(--page-padding-x);
-  padding-bottom: var(--page-padding-bottom);
-  padding-left: var(--page-padding-x);
-}
-
-main#main-content {
-  padding-right: var(--page-padding-x);
-  padding-bottom: var(--page-padding-bottom);
-  padding-left: var(--page-padding-x);
+  @apply px-6 sm:px-8 lg:px-6;
 }
 
 :focus-visible {

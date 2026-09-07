@@ -1,14 +1,12 @@
-import { Header } from "@/components/Header/Header";
+import { SiteHeader } from "@/components/Header/SiteHeader";
 import { Footer } from "@/components/Footer/Footer";
-import { Container } from "@/components/ui/Container";
+import { SiteMain } from "./SiteMain";
 
 export default function SiteLayout({ children }) {
   return (
     <>
-      <Header />
-      <main id="main-content" className="!p-0">
-        <Container className="page-layout-padding">{children}</Container>
-      </main>
+      <SiteHeader />
+      <SiteMain>{children}</SiteMain>
       <Footer />
     </>
   );

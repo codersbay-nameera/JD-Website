@@ -28,7 +28,7 @@ const steps = [
 export default function OnboardingReplenishmentSection() {
   return (
     <section aria-label="From onboarding to your first replenishment">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-4 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-4">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           From onboarding to your first replenishment.
         </h2>

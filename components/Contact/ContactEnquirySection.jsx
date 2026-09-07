@@ -93,7 +93,7 @@ function LinkedInIcon() {
 export default function ContactEnquirySection() {
   return (
     <section aria-label="Contact enquiry">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-10 sm:px-8 lg:px-6 lg:pt-14">
+      <div className="pb-16 pt-10 lg:pt-14">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="min-w-0">
             <h1 className="text-[clamp(1.875rem,3.5vw,2.5rem)] font-bold leading-[1.15] text-[var(--header-navy)]">

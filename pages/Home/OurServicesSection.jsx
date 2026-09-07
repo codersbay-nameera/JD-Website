@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { headerCta } from "@/config/navigation";
 import jdRegularDashboardImage from "@/assets/images/jd regular.webp";
 import jdInstantAppImage from "@/assets/images/jd instant.webp";
 import jdStorageDashboardImage from "@/assets/images/jd storage.webp";
@@ -22,7 +21,7 @@ const defaultServices = [
       "JD Regular logistics dashboard showing fleet management and delivery operations",
     imagePosition: "right",
     primaryLabel: "Get an Quote",
-    primaryHref: headerCta.href,
+    primaryHref: "https://quote.justdeliveries.ai/",
   },
   {
     id: "instant",
@@ -40,7 +39,7 @@ const defaultServices = [
       "JD Instant mobile app for booking dedicated temperature-controlled vehicles on demand",
     imagePosition: "left",
     primaryLabel: "Download APP",
-    primaryHref: "#",
+    primaryHref: "https://apps.apple.com/in/app/justdeliveries/id6754659658",
     imageAspect: "square",
   },
   {
@@ -59,7 +58,7 @@ const defaultServices = [
       "JD Storage warehouse management dashboard with inventory and temperature monitoring",
     imagePosition: "right",
     primaryLabel: "Get an Quote",
-    primaryHref: headerCta.href,
+    primaryHref: "https://quote.justdeliveries.ai/",
   },
 ];
 
@@ -100,6 +99,8 @@ function ServiceActions({ primaryLabel, primaryHref, knowMoreHref }) {
       ) : (
         <a
           href={primaryHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
         >
           {primaryLabel}

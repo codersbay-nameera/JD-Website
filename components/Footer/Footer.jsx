@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { Container } from "@/components/ui/Container";
 import appStore from "@/assets/images/app-store.png";
 import playStore from "@/assets/images/PlayStore.png";
 const footerTagline =
@@ -61,15 +60,15 @@ const footerColumns = [
 const appDownloads = [
   {
     label: "Download on the App Store",
-    href: "#",
+    href: "https://apps.apple.com/in/app/justdeliveries/id6754659658",
     src: appStore,
     width: 135,
     height: 40,
   },
   {
     label: "Get it on Google Play",
-    href: "#",
-    src:playStore,
+    href: "https://play.google.com/store/apps/details?id=com.just.delivery.just_delivery",
+    src: playStore,
     width: 135,
     height: 40,
   },
@@ -117,7 +116,7 @@ function FooterLink({ item }) {
 export function Footer() {
   return (
     <footer className="mt-auto bg-[#EEF3F8]">
-      <Container className="page-layout-padding pt-12 pb-6 sm:pt-14 sm:pb-8">
+      <div className="page-layout-padding w-full pt-12 pb-6 sm:pt-14 sm:pb-8">
         <div className="max-w-xl">
           <Link href="/" aria-label={`${siteConfig.name} home`}>
             <Image
@@ -159,6 +158,8 @@ export function Footer() {
               <a
                 key={app.label}
                 href={app.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0"
                 aria-label={app.label}
               >
@@ -167,7 +168,7 @@ export function Footer() {
                   alt={app.label}
                   width={app.width}
                   height={app.height}
-                  className="h-10 w-auto max-w-full"
+                  className="h-10 w-[135px] object-contain"
                 />
               </a>
             ))}
@@ -200,7 +201,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

@@ -2,9 +2,15 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import appStore from "@/assets/images/app-store.png";
+import playStore from "@/assets/images/PlayStore.png";
 import jdRegularImage from "@/assets/images/jdregular.webp";
 import jdInstantImage from "@/assets/images/jdinstant.webp";
 import jdStorageImage from "@/assets/images/jdstorage.webp";
+import { SpeakToOurTeamModal } from "@/components/SpeakToOurTeamModal";
+
+const STORE_BUTTON_WIDTH = 135;
+const STORE_BUTTON_HEIGHT = 40;
 
 const AUTOPLAY_INTERVAL = 1500;
 const SLIDE_TRANSITION_MS = 700;
@@ -15,7 +21,7 @@ export const defaultSlides = [
     headingLevel: 1,
     headingParts: [
       { text: "India’s Trusted ", color: "navy" },
-      { text: "F&B", color: "green" },
+      { text: "F&B", color: "#178A49"},
       { text: " Logistics Partner", color: "green" },
     ],
     description:
@@ -30,13 +36,13 @@ export const defaultSlides = [
       {
         type: "primary",
         label: "Get an Instant Quote",
-        href: "#",
+        href: "https://quote.justdeliveries.ai/",
         icon: "arrow",
       },
       {
         type: "secondary",
         label: "Speak to Our Team",
-        href: "#",
+        opensModal: true,
         icon: "phone",
       },
     ],
@@ -61,8 +67,16 @@ export const defaultSlides = [
       { value: "100%", label: "dedicated, never shared" },
     ],
     appStoreButtons: [
-      { label: "App Store", href: "#" },
-      { label: "Google Play", href: "#" },
+      {
+        label: "Download on the App Store",
+        href: "https://apps.apple.com/in/app/justdeliveries/id6754659658",
+        src: appStore,
+      },
+      {
+        label: "Get it on Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.just.delivery.just_delivery",
+        src: playStore,
+      },
     ],
     image: jdInstantImage,
     imageAlt:
@@ -88,13 +102,13 @@ export const defaultSlides = [
       {
         type: "primary",
         label: "Get a Customized Quotation",
-        href: "#",
+        href: "https://quote.justdeliveries.ai/",
         icon: "arrow",
       },
       {
         type: "secondary",
         label: "Talk to JD Expert",
-        href: "#",
+        opensModal: true,
         icon: "phone",
       },
     ],
@@ -165,7 +179,7 @@ function SlideHeading({ slide }) {
   );
 }
 
-function SlideActions({ slide }) {
+function SlideActions({ slide, onSpeakToTeamClick }) {
   if (slide.appStoreButtons?.length) {
     return (
       <div className="flex flex-wrap gap-3">
@@ -173,9 +187,18 @@ function SlideActions({ slide }) {
           <a
             key={button.label}
             href={button.href}
-            className="inline-flex min-h-11 min-w-[9.5rem] items-center justify-center rounded-lg border border-[var(--header-navy)] bg-[var(--header-navy)] px-5 text-sm font-semibold text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0"
+            aria-label={button.label}
           >
-            {button.label}
+            <Image
+              src={button.src}
+              alt={button.label}
+              width={STORE_BUTTON_WIDTH}
+              height={STORE_BUTTON_HEIGHT}
+              className="h-10 w-[135px] object-contain"
+            />
           </a>
         ))}
       </div>
@@ -188,26 +211,48 @@ function SlideActions({ slide }) {
 
   return (
     <div className="flex flex-wrap gap-3">
-      {slide.actions.map((action) => (
-        <a
-          key={action.label}
-          href={action.href}
-          className={
-            action.type === "primary"
-              ? "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
-              : "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
-          }
-        >
-          {action.label}
-          {action.icon === "arrow" ? <ArrowRightIcon /> : null}
-          {action.icon === "phone" ? <PhoneIcon /> : null}
-        </a>
-      ))}
+      {slide.actions.map((action) => {
+        const actionClassName =
+          action.type === "primary"
+            ? "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+            : "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]";
+
+        if (action.opensModal) {
+          return (
+            <button
+              key={action.label}
+              type="button"
+              onClick={onSpeakToTeamClick}
+              className={actionClassName}
+            >
+              {action.label}
+              {action.icon === "phone" ? <PhoneIcon /> : null}
+            </button>
+          );
+        }
+
+        const isExternalLink = action.href?.startsWith("http");
+
+        return (
+          <a
+            key={action.label}
+            href={action.href}
+            {...(isExternalLink
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+            className={actionClassName}
+          >
+            {action.label}
+            {action.icon === "arrow" ? <ArrowRightIcon /> : null}
+            {action.icon === "phone" ? <PhoneIcon /> : null}
+          </a>
+        );
+      })}
     </div>
   );
 }
 
-function SlideContent({ slide }) {
+function SlideContent({ slide, onSpeakToTeamClick }) {
   return (
     <div className="flex min-h-0 min-w-0 flex-col justify-center gap-6">
       <SlideHeading slide={slide} />
@@ -231,7 +276,7 @@ function SlideContent({ slide }) {
         </dl>
       ) : null}
 
-      <SlideActions slide={slide} />
+      <SlideActions slide={slide} onSpeakToTeamClick={onSpeakToTeamClick} />
     </div>
   );
 }
@@ -251,13 +296,13 @@ function SlideImage({ slide }) {
   );
 }
 
-function SlidePanel({ slide, isActive }) {
+function SlidePanel({ slide, isActive, onSpeakToTeamClick }) {
   return (
     <div
       className="grid h-full min-h-full min-w-full shrink-0 basis-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10"
       aria-hidden={!isActive || undefined}
     >
-      <SlideContent slide={slide} />
+      <SlideContent slide={slide} onSpeakToTeamClick={onSpeakToTeamClick} />
       <div className="flex h-full min-h-0 w-full items-center lg:items-stretch">
         <SlideImage slide={slide} />
       </div>
@@ -270,6 +315,7 @@ export function SliderSection({ slides = defaultSlides }) {
   const [enableTransition, setEnableTransition] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isSpeakToTeamModalOpen, setIsSpeakToTeamModalOpen] = useState(false);
   const intervalRef = useRef(null);
   const resetTransitionRef = useRef(null);
 
@@ -285,6 +331,14 @@ export function SliderSection({ slides = defaultSlides }) {
   const activeSlide = slides[activeIndex];
   const referenceSlide = slides[1] ?? slides[0];
   const safeTrackIndex = slideCount <= 1 ? 0 : trackIndex;
+
+  const openSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(true);
+  }, []);
+
+  const closeSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(false);
+  }, []);
 
   const goToSlide = useCallback(
     (index) => {
@@ -435,7 +489,7 @@ export function SliderSection({ slides = defaultSlides }) {
       >
         <div className="relative w-full overflow-hidden">
           <div className="pointer-events-none invisible" aria-hidden="true">
-            <SlidePanel slide={referenceSlide} isActive />
+            <SlidePanel slide={referenceSlide} isActive onSpeakToTeamClick={openSpeakToTeamModal} />
           </div>
 
           <div className="absolute inset-0 h-full overflow-hidden">
@@ -455,6 +509,7 @@ export function SliderSection({ slides = defaultSlides }) {
                   key={`${slide.id}-${index}`}
                   slide={slide}
                   isActive={index === safeTrackIndex}
+                  onSpeakToTeamClick={openSpeakToTeamModal}
                 />
               ))}
             </div>
@@ -490,6 +545,11 @@ export function SliderSection({ slides = defaultSlides }) {
           );
         })}
       </div>
+
+      <SpeakToOurTeamModal
+        isOpen={isSpeakToTeamModalOpen}
+        onClose={closeSpeakToTeamModal}
+      />
     </section>
   );
 }

@@ -54,7 +54,7 @@ function ArrowRightIcon() {
 export default function FleetDeliveryControlSection() {
   return (
     <section aria-label="Fleet and Delivery Control">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 sm:px-8 lg:px-6">
+      <div className="pb-16">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="min-w-0">
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">

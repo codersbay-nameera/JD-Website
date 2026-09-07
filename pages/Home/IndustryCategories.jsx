@@ -7,6 +7,7 @@ import qsrImage from "@/assets/images/cat-sushi 1.webp";
 import bakeryImage from "@/assets/images/cat-pharma 1.webp";
 import seafoodImage from "@/assets/images/cat-seafood 1.webp";
 import flowersImage from "@/assets/images/cat-flowers 1.webp";
+import MeatPoultry from "@/assets/images/Meat.webp"
 
 const defaultCategories = [
   {
@@ -40,7 +41,7 @@ const defaultCategories = [
   {
     id: "meat",
     title: "Meat & Poultry",
-    image: null,
+    image: MeatPoultry,
     imageAlt:
       "Fresh meat and poultry products for hygienic cold chain logistics",
   },

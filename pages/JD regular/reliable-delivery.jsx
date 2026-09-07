@@ -28,7 +28,7 @@ const steps = [
 export default function ReliableDelivery() {
   return (
     <section aria-label="From request to reliable delivery">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-10 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-10">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           From Request to Reliable Delivery
         </h2>

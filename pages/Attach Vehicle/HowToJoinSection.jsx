@@ -28,7 +28,7 @@ const steps = [
 export default function HowToJoinSection() {
   return (
     <section aria-label="How to Join JustDeliveries">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-4 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-4">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           How to Join JustDeliveries
         </h2>

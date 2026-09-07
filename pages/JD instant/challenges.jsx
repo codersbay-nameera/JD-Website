@@ -22,7 +22,7 @@ export default function Challenges() {
       className="relative left-1/2 w-screen max-w-none -translate-x-1/2 bg-[#EEF4F8]"
       aria-label="JD Instant challenge and solution"
     >
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-14 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-14">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-[1.2] text-[#193663]">
           We built JD Instant to solve a real challenge
         </h2>

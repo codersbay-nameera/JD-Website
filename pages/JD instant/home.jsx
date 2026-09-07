@@ -14,9 +14,9 @@ export default function Home() {
       className="relative left-1/2 w-screen max-w-none -translate-x-1/2 border-t border-[#DCE4EE] bg-[#EEF4F8]"
       aria-label="JD Instant hero"
     >
-      <div className="mx-auto min-h-[684px] max-w-[1548px]">
+      <div className="min-h-[684px]">
         <div className="flex flex-col lg:flex-row lg:items-start">
-          <div className="px-6 pt-12 sm:px-8 lg:w-[48%] lg:max-w-[750px] lg:shrink-0 lg:px-0 lg:pl-[90px] lg:pt-[82px]">
+          <div className="page-layout-padding pt-12 lg:w-[48%] lg:max-w-[750px] lg:shrink-0 lg:pt-[82px]">
             <h1 className="text-[clamp(1.875rem,3.6vw,3.125rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#193663]">
               <span className="text-[#168D4F]">Pay per use</span>
               {" chilled and"}
@@ -51,37 +51,41 @@ export default function Home() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
-                href="#"
+                href="https://apps.apple.com/in/app/justdeliveries/id6754659658"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0"
                 aria-label="Download on the App Store"
               >
                 <Image
                   src={appStore}
                   alt="Download on the App Store"
-                  width={165}
-                  height={50}
-                  className="h-[50px] w-[165px]"
+                  width={135}
+                  height={40}
+                  className="h-10 w-[135px] object-contain"
                   priority
                 />
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.just.delivery.just_delivery"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0"
                 aria-label="Get it on Google Play"
               >
                 <Image
                   src={playStore}
                   alt="Get it on Google Play"
-                  width={157}
-                  height={50}
-                  className="h-[50px] w-[157px]"
+                  width={135}
+                  height={40}
+                  className="h-10 w-[135px] object-contain"
                   priority
                 />
               </a>
             </div>
           </div>
 
-          <div className="flex justify-center px-6 pb-12 pt-8 lg:w-[52%] lg:justify-start lg:px-0 lg:pb-0 lg:pl-[68px] lg:pt-[70px]">
+          <div className="page-layout-padding flex justify-center pb-12 pt-8 lg:w-[52%] lg:justify-start lg:pb-0 lg:pl-[68px] lg:pt-[70px]">
             <div className="relative h-[min(510px,60vw)] w-full max-w-[647px] overflow-hidden rounded-[40px] lg:h-[510px] lg:w-[647px] lg:shrink-0">
               <Image
                 src={jdInstantImage}

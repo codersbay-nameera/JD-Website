@@ -1,6 +1,17 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { headerCta, headerNavigation } from "@/config/navigation";
 import { AppLink } from "@/components/ui/Link";
 import { cn } from "@/lib/utils";
+
+function isNavItemActive(pathname, href) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 function ArrowRightIcon() {
   return (
@@ -24,23 +35,37 @@ function ArrowRightIcon() {
 }
 
 export function Navbar({ className }) {
+  const pathname = usePathname();
+
   return (
     <nav aria-label="Main navigation" className={cn(className)}>
       <ul className="flex flex-wrap items-center justify-end gap-x-6 gap-y-3 lg:gap-x-9">
-        {headerNavigation.map((item) => (
-          <li key={item.label}>
-            <AppLink
-              href={item.href}
-              className="whitespace-nowrap text-[15px] font-medium leading-none text-[var(--header-nav-text)] transition-none hover:text-[var(--header-nav-text)]"
-            >
-              {item.label}
-            </AppLink>
-          </li>
-        ))}
+        {headerNavigation.map((item) => {
+          const isActive = isNavItemActive(pathname, item.href);
+
+          return (
+            <li key={item.label}>
+              <AppLink
+                href={item.href}
+                disableHover
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "relative inline-block whitespace-nowrap pb-1 text-[15px] font-medium leading-none text-[var(--header-nav-text)]",
+                  isActive &&
+                    "after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:rounded-full after:bg-[#2daa5a] after:content-['']",
+                )}
+              >
+                {item.label}
+              </AppLink>
+            </li>
+          );
+        })}
         <li>
           <AppLink
-            href={headerCta.href}
-            className="inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-[var(--header-navy)] px-5 text-[15px] font-medium leading-none text-white transition-none hover:opacity-100"
+            href="https://quote.justdeliveries.ai/"
+            external
+            disableHover
+            className="inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-[var(--header-navy)] px-5 text-[15px] font-medium leading-none text-white"
           >
             {headerCta.label}
             <ArrowRightIcon />

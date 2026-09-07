@@ -105,7 +105,7 @@ function PricingCard({ plan }) {
 export default function PricingCardsSection() {
   return (
     <section aria-label="Pricing plans">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-10 sm:px-8 lg:px-6 lg:pt-14">
+      <div className="pb-16 pt-10 lg:pt-14">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-[clamp(1.875rem,3.5vw,2.75rem)] font-bold leading-[1.15] text-[var(--header-navy)]">
             Straight forward pricing for

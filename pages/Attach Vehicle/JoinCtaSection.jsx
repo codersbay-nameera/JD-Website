@@ -110,7 +110,7 @@ function CtaDecorations() {
 export default function JoinCtaSection() {
   return (
     <section aria-label="Join JustDeliveries as a vehicle partner">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-4 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-4">
         <div className="relative mx-auto w-full max-w-[90%] overflow-hidden rounded-[32px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:min-h-[470px] lg:px-0 lg:py-14">
           <CtaDecorations />
 

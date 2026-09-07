@@ -6,11 +6,14 @@ export function AppLink({
   className,
   external = false,
   underline = false,
+  disableHover = false,
   href,
   ...props
 }) {
   const classes = cn(
-    "text-foreground transition-colors hover:text-muted-foreground",
+    disableHover
+      ? "text-foreground"
+      : "text-foreground transition-colors hover:text-muted-foreground",
     underline && "underline underline-offset-4",
     className,
   );

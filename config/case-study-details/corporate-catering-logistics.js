@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/image 165.webp";
+import heroImage from "@/assets/images/Meat.webp";
 import tssLogo from "@/assets/images/Tss.png";
 
 export const corporateCateringCaseStudyDetail = {

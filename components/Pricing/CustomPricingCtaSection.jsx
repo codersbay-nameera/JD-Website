@@ -89,7 +89,7 @@ function CtaDecorations() {
 export default function CustomPricingCtaSection() {
   return (
     <section aria-label="Custom pricing">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-4 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-4">
         <div className="relative overflow-hidden rounded-[42px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <CtaDecorations />
 

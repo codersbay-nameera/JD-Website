@@ -36,7 +36,7 @@ function MissionCard({ card }) {
 export default function MissionVisionSection() {
   return (
     <section aria-label="Mission, vision and focus">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-14 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-14">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           Driven by a vision. Powered by a mission.
         </h2>

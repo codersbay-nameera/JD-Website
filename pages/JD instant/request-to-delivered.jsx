@@ -31,7 +31,7 @@ export default function RequestToDelivered() {
       className="relative left-1/2 w-screen max-w-none -translate-x-1/2 bg-[#EEF4F8]"
       aria-label="From request to delivered"
     >
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-10 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-10">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[#193663]">
           From request to delivered, verified at every step.
         </h2>

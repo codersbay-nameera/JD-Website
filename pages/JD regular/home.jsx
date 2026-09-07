@@ -66,8 +66,7 @@ export default function Home() {
         className="w-full min-w-0 max-w-full overflow-x-hidden pt-5 sm:pt-6 lg:pt-8"
         aria-label="JD Regular hero"
       >
-        <div className="mx-auto max-w-[1548px]">
-          <div className="grid grid-cols-1 items-center gap-8 px-6 sm:px-8 lg:grid-cols-2 lg:items-stretch lg:gap-10 lg:px-0 lg:pl-[90px]">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
             <div className="flex min-h-0 min-w-0 flex-col justify-center gap-6">
               <h1 className="text-[clamp(1.875rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em]">
                 <span className="text-[var(--header-navy)]">India’s Trusted </span>
@@ -125,7 +124,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       <TrustedBrandsSection />

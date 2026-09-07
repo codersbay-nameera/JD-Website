@@ -33,7 +33,7 @@ function CheckIcon() {
 export default function BuiltForBrands() {
   return (
     <section aria-label="Built for brands that cannot afford a bad delivery day">
-      <div className="mx-auto max-w-[1320px] px-6 pb-16 pt-14 sm:px-8 lg:px-6">
+      <div className="pb-16 pt-14">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           Built for brands that can&apos;t afford a bad delivery day.
         </h2>

@@ -91,7 +91,7 @@ function CtaDecorations() {
 export default function SuccessStoryCtaSection() {
   return (
     <section aria-label="Want to be the next success story">
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 pt-10 sm:px-8 sm:pt-16 lg:px-6 lg:pt-20">
+      <div className="pb-16 pt-10 sm:pt-16 lg:pt-20">
         <div className="relative overflow-hidden rounded-[42px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <CtaDecorations />
 

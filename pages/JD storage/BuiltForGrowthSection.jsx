@@ -156,7 +156,7 @@ export default function BuiltForGrowthSection() {
 
   return (
     <section aria-label="Built for the way your business grows">
-      <div className="mx-auto max-w-[1320px] px-6 pb-10 pt-14 sm:px-8 lg:px-6">
+      <div className="pb-10 pt-14">
         <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
           Built for the Way Your Business Grows
         </h2>
@@ -244,7 +244,7 @@ export default function BuiltForGrowthSection() {
         </article>
       </div>
 
-      <div className="mx-auto max-w-[1370px] px-6 pb-16 sm:px-8 lg:px-6">
+      <div className="pb-16">
         <div className="relative overflow-hidden rounded-[42px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <CtaDecorations />
 
