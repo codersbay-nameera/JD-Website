@@ -1,3 +1,7 @@
+"use client";
+
+import { useCallback, useState } from "react";
+import { SpeakToOurTeamModal } from "@/components/SpeakToOurTeamModal";
 import DriverVideosSection from "@/pages/Attach Vehicle/DriverVideosSection";
 import FleetDeliveryControlSection from "@/pages/Attach Vehicle/FleetDeliveryControlSection";
 import HeroSection from "@/pages/Attach Vehicle/HeroSection";
@@ -7,15 +11,29 @@ import TrustedBrandsTestimonialsSection from "@/pages/Attach Vehicle/TrustedBran
 import WhyDriversSection from "@/pages/Attach Vehicle/WhyDriversSection";
 
 export default function Home() {
+  const [isSpeakToTeamModalOpen, setIsSpeakToTeamModalOpen] = useState(false);
+
+  const openSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(true);
+  }, []);
+
+  const closeSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(false);
+  }, []);
+
   return (
     <>
-      <HeroSection />
+      <HeroSection onSpeakToTeamClick={openSpeakToTeamModal} />
       <WhyDriversSection />
       <FleetDeliveryControlSection />
       <HowToJoinSection />
       <DriverVideosSection />
       <TrustedBrandsTestimonialsSection />
       <JoinCtaSection />
+      <SpeakToOurTeamModal
+        isOpen={isSpeakToTeamModalOpen}
+        onClose={closeSpeakToTeamModal}
+      />
     </>
   );
 }

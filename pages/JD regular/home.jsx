@@ -1,7 +1,11 @@
+"use client";
+
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import { FAQSection } from "@/components/FAQ";
 import { CustomerStoriesSlider } from "@/pages/Home/CustomerStoriesSlider";
 import { TrustedBrandsSection } from "@/pages/Home/TrustedBrandsSection";
+import { SpeakToOurTeamModal } from "@/components/SpeakToOurTeamModal";
 import { jdRegularFaqs } from "@/config/faq";
 import jdRegularImage from "@/assets/images/jdregular.webp";
 import OneContract from "@/pages/JD regular/one-contract";
@@ -60,6 +64,16 @@ function PhoneIcon() {
 }
 
 export default function Home() {
+  const [isSpeakToTeamModalOpen, setIsSpeakToTeamModalOpen] = useState(false);
+
+  const openSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(true);
+  }, []);
+
+  const closeSpeakToTeamModal = useCallback(() => {
+    setIsSpeakToTeamModalOpen(false);
+  }, []);
+
   return (
     <>
       <section
@@ -95,19 +109,22 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://quote.justdeliveries.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
                 >
                   Get an Instant Quote
                   <ArrowRightIcon />
                 </a>
-                <a
-                  href="#"
+                <button
+                  type="button"
+                  onClick={openSpeakToTeamModal}
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
                 >
                   Speak to Our Team
                   <PhoneIcon />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -133,7 +150,11 @@ export default function Home() {
       <CustomerStoriesSlider heading="Trusted by India’s best F&B brands" />
       <QuotationCta />
       <FAQSection items={jdRegularFaqs} />
-      <BottomCta />
+      <BottomCta onSpeakToTeamClick={openSpeakToTeamModal} />
+      <SpeakToOurTeamModal
+        isOpen={isSpeakToTeamModalOpen}
+        onClose={closeSpeakToTeamModal}
+      />
     </>
   );
 }

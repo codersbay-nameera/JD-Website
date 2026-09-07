@@ -50,7 +50,7 @@ function PhoneIcon() {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ onSpeakToTeamClick }) {
   return (
     <section
       className="w-full min-w-0 max-w-full overflow-x-hidden pt-5 sm:pt-6 lg:pt-8"
@@ -84,19 +84,22 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="#"
+                href="https://quote.justdeliveries.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
               >
                 Get a Customized Quotation
                 <ArrowRightIcon />
               </a>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={onSpeakToTeamClick}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
               >
                 Talk to JD Expert
                 <PhoneIcon />
-              </a>
+              </button>
             </div>
           </div>
 

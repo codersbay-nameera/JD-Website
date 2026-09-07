@@ -67,7 +67,9 @@ export default function WarehouseManagementSection() {
               ))}
             </ul>
             <a
-              href="#"
+              href="https://wms.justdeliveries.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
             >
               See a live demo

@@ -151,7 +151,7 @@ function CtaDecorations() {
   );
 }
 
-export default function BuiltForGrowthSection() {
+export default function BuiltForGrowthSection({ onSpeakToTeamClick }) {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
@@ -270,19 +270,22 @@ export default function BuiltForGrowthSection() {
                 storage and logistics solution for your business.
               </p>
               <a
-                href="#"
+                href="https://quote.justdeliveries.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 py-3 text-sm font-semibold text-white"
               >
                 Get your customized quotation
                 <ArrowRightIcon />
               </a>
               <p className="mt-5 text-center text-sm text-white/70">Or</p>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={onSpeakToTeamClick}
                 className="mt-4 flex items-center justify-center text-[16px] font-medium text-white"
               >
                 Speak to our fulfillment experts
-              </a>
+              </button>
             </div>
           </div>
         </div>

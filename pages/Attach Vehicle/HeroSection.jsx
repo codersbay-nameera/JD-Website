@@ -28,7 +28,7 @@ function ArrowRightIcon() {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ onSpeakToTeamClick }) {
   return (
     <section
       className="w-full min-w-0 max-w-full overflow-x-hidden pt-5 sm:pt-6 lg:pt-8"
@@ -69,13 +69,14 @@ export default function HeroSection() {
                 Join Now
                 <ArrowRightIcon />
               </a>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={onSpeakToTeamClick}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
               >
                 <span aria-hidden="true">☎</span>
                 Talk to JD Expert Team
-              </a>
+              </button>
             </div>
           </div>
 

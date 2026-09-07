@@ -140,7 +140,9 @@ export default function QuotationCta() {
                 minutes.
               </p>
               <a
-                href="#"
+                href="https://quote.justdeliveries.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 py-3 text-sm font-semibold text-white"
               >
                 Open Quotation Calculator

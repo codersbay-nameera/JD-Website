@@ -41,7 +41,9 @@ function PhoneIcon() {
   );
 }
 
-export default function ReadyCtaSection() {
+export default function ReadyCtaSection({ onSpeakToTeamClick, quoteHref = "#" }) {
+  const isExternalQuoteLink = quoteHref.startsWith("http");
+
   return (
     <section aria-label="Ready to outsource your operations">
       <div className="pb-16 pt-4">
@@ -117,19 +119,33 @@ export default function ReadyCtaSection() {
 
             <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <a
-                href="#"
+                href={quoteHref}
+                {...(isExternalQuoteLink
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold whitespace-nowrap text-white"
               >
                 Get a quotation
                 <ArrowRightIcon />
               </a>
-              <a
-                href="#"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold whitespace-nowrap text-white"
-              >
-                <PhoneIcon />
-                Talk to our expert
-              </a>
+              {onSpeakToTeamClick ? (
+                <button
+                  type="button"
+                  onClick={onSpeakToTeamClick}
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold whitespace-nowrap text-white"
+                >
+                  <PhoneIcon />
+                  Talk to our expert
+                </button>
+              ) : (
+                <a
+                  href="#"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold whitespace-nowrap text-white"
+                >
+                  <PhoneIcon />
+                  Talk to our expert
+                </a>
+              )}
             </div>
           </div>
         </div>

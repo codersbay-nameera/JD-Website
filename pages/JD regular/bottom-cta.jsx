@@ -41,7 +41,7 @@ function PhoneIcon() {
   );
 }
 
-export default function BottomCta() {
+export default function BottomCta({ onSpeakToTeamClick }) {
   return (
     <section aria-label="Ready to move your cold chain">
       <div className="pb-16 pt-4">
@@ -116,19 +116,22 @@ export default function BottomCta() {
 
             <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <a
-                href="#"
+                href="https://quote.justdeliveries.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold whitespace-nowrap text-white"
               >
                 Get an instant quote
                 <ArrowRightIcon />
               </a>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={onSpeakToTeamClick}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold whitespace-nowrap text-white"
               >
                 <PhoneIcon />
                 Talk to our expert
-              </a>
+              </button>
             </div>
           </div>
         </div>
