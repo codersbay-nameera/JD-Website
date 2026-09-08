@@ -164,12 +164,12 @@ function SlideHeading({ slide }) {
   const Tag = slide.headingLevel === 1 ? "h1" : "h2";
 
   return (
-    <Tag className="text-[clamp(1.875rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em]">
+    <Tag className="text-[clamp(1.625rem,7vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] lg:text-[clamp(1.875rem,3.5vw,3rem)]">
       {slide.headingParts.map((part, index) => (
         <span
           key={`${slide.id}-heading-${index}`}
           className={
-            part.color === "green" ? "text-[#2daa5a]" : "text-[var(--header-navy)]"
+            part.color === "green" ? "text-[#178A49]" : "text-[var(--header-navy)]"
           }
         >
           {part.text}
@@ -182,7 +182,7 @@ function SlideHeading({ slide }) {
 function SlideActions({ slide, onSpeakToTeamClick }) {
   if (slide.appStoreButtons?.length) {
     return (
-      <div className="flex flex-wrap gap-3">
+      <div className="flex w-full flex-wrap gap-3">
         {slide.appStoreButtons.map((button) => (
           <a
             key={button.label}
@@ -210,12 +210,12 @@ function SlideActions({ slide, onSpeakToTeamClick }) {
   }
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
       {slide.actions.map((action) => {
         const actionClassName =
           action.type === "primary"
-            ? "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
-            : "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]";
+            ? "inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white sm:w-auto"
+            : "inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)] sm:w-auto";
 
         if (action.opensModal) {
           return (
@@ -254,7 +254,7 @@ function SlideActions({ slide, onSpeakToTeamClick }) {
 
 function SlideContent({ slide, onSpeakToTeamClick }) {
   return (
-    <div className="flex min-h-0 min-w-0 flex-col justify-center gap-6">
+    <div className="flex min-h-0 min-w-0 flex-col justify-center gap-5 sm:gap-6">
       <SlideHeading slide={slide} />
 
       <p className="max-w-xl text-[clamp(0.9375rem,1.5vw,1.125rem)] leading-relaxed text-[var(--header-navy)]">
@@ -262,7 +262,7 @@ function SlideContent({ slide, onSpeakToTeamClick }) {
       </p>
 
       {slide.stats?.length ? (
-        <dl className="grid grid-cols-2 gap-4 sm:gap-5">
+        <dl className="grid grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-5">
           {slide.stats.map((stat) => (
             <div key={`${stat.value}-${stat.label}`}>
               <dt className="text-[clamp(1.375rem,2.5vw,1.75rem)] font-bold leading-tight text-[#178A49]">
@@ -283,7 +283,7 @@ function SlideContent({ slide, onSpeakToTeamClick }) {
 
 function SlideImage({ slide }) {
   return (
-    <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-3xl bg-white lg:aspect-[16/11]">
+    <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-2xl bg-white sm:rounded-3xl lg:aspect-[16/11]">
       <Image
         src={slide.image}
         alt={slide.imageAlt}
@@ -299,7 +299,7 @@ function SlideImage({ slide }) {
 function SlidePanel({ slide, isActive, onSpeakToTeamClick }) {
   return (
     <div
-      className="grid h-full min-h-full min-w-full shrink-0 basis-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10"
+      className="grid h-full min-h-full min-w-full shrink-0 basis-full grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10"
       aria-hidden={!isActive || undefined}
     >
       <SlideContent slide={slide} onSpeakToTeamClick={onSpeakToTeamClick} />
@@ -329,7 +329,7 @@ export function SliderSection({ slides = defaultSlides }) {
         ? 0
         : Math.min(trackIndex, slideCount - 1);
   const activeSlide = slides[activeIndex];
-  const referenceSlide = slides[1] ?? slides[0];
+  const referenceSlide = slides[0];
   const safeTrackIndex = slideCount <= 1 ? 0 : trackIndex;
 
   const openSpeakToTeamModal = useCallback(() => {
@@ -518,7 +518,7 @@ export function SliderSection({ slides = defaultSlides }) {
       </div>
 
       <div
-        className="mt-8 flex items-center justify-center gap-2"
+        className="mt-6 flex items-center justify-center gap-2 sm:mt-8"
         role="tablist"
         aria-label="Homepage slider"
       >
@@ -537,7 +537,7 @@ export function SliderSection({ slides = defaultSlides }) {
               tabIndex={isActive ? 0 : -1}
               className={
                 isActive
-                  ? "h-2.5 w-2.5 rounded-full border-0 bg-[var(--header-navy)] p-0"
+                  ? "h-2.5 w-2.5 rounded-full border-0 bg-[#178A49] p-0"
                   : "h-2.5 w-2.5 rounded-full border-0 bg-[#c5d0dc] p-0"
               }
               onClick={() => goToSlide(index)}

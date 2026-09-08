@@ -14,7 +14,7 @@ function BlogCard({ post }) {
           <p className="min-w-0 flex-1 text-sm font-semibold leading-snug text-white">
             {post.title}
           </p>
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#2daa5a] bg-white sm:h-16 sm:w-16">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#178A49] bg-white sm:h-16 sm:w-16">
             <Image
               src={post.image}
               alt={post.imageAlt}
@@ -43,7 +43,7 @@ function BlogCard({ post }) {
           </h3>
 
           <p className="mt-3 text-sm text-[var(--muted-foreground)]">
-            <span className="text-[#2daa5a]">Blog</span>
+            <span className="text-[#178A49]">Blog</span>
             <span aria-hidden="true"> · </span>
             <span>By {post.author}</span>
           </p>

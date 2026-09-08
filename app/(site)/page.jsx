@@ -12,13 +12,13 @@ export const metadata = createPageMetadata({
 
 export default function HomePage() {
   return (
-    <>
+    <div className="min-w-0 overflow-x-clip">
       <SliderSection />
       <TrustedBrandsSection />
       <OurServicesSection />
-      <CustomerStoriesSlider />
+      <CustomerStoriesSlider homeMobileLayout />
       <IndustryCategories />
       <CaseStudiesSlider />
-    </>
+    </div>
   );
 }

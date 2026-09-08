@@ -22,7 +22,7 @@ const checklistCards = [
 function CheckIcon() {
   return (
     <span
-      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#2daa5a] text-xs font-bold text-white"
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#178A49] text-xs font-bold text-white"
       aria-hidden="true"
     >
       ✓
@@ -33,16 +33,16 @@ function CheckIcon() {
 export default function BuiltForBrands() {
   return (
     <section aria-label="Built for brands that cannot afford a bad delivery day">
-      <div className="pb-16 pt-14">
-        <h2 className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] text-[var(--header-navy)]">
+      <div className="pb-10 pt-10 lg:pb-16 lg:pt-14">
+        <h2 className="text-balance px-1 text-center text-[clamp(1.25rem,4.5vw,2rem)] font-bold leading-[1.25] text-[var(--header-navy)] lg:text-[clamp(1.5rem,3vw,2rem)] lg:leading-[1.2]">
           Built for brands that can&apos;t afford a bad delivery day.
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-[18px] lg:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-4 lg:mt-10 lg:grid-cols-2 lg:gap-[18px]">
           {checklistCards.map((card) => (
             <article
               key={card.title}
-              className="relative flex min-h-[300px] flex-col overflow-hidden rounded-[30px] border border-[#DCE2E7] bg-white p-8"
+              className="relative flex min-h-0 flex-col overflow-hidden rounded-[24px] border border-[#DCE2E7] bg-white p-6 lg:min-h-[300px] lg:rounded-[30px] lg:p-8"
             >
               <div
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] opacity-50"
@@ -53,14 +53,14 @@ export default function BuiltForBrands() {
                 }}
                 aria-hidden="true"
               />
-              <h3 className="relative text-[20px] font-semibold text-[var(--header-navy)]">
+              <h3 className="relative text-[18px] font-semibold text-[var(--header-navy)] lg:text-[20px]">
                 {card.title}
               </h3>
-              <ul className="relative mt-5 space-y-4">
+              <ul className="relative mt-4 space-y-3 lg:mt-5 lg:space-y-4">
                 {card.items.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckIcon />
-                    <span className="text-[18px] font-normal leading-[1.48] text-[var(--header-navy)]">
+                    <span className="text-[16px] font-normal leading-[1.48] text-[var(--header-navy)] lg:text-[18px]">
                       {item}
                     </span>
                   </li>

@@ -87,11 +87,11 @@ function ServiceActions({ primaryLabel, primaryHref, knowMoreHref }) {
   const primaryIsInternal = primaryHref.startsWith("/");
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex w-full flex-row gap-2 sm:flex-wrap sm:gap-3">
       {primaryIsInternal ? (
         <Link
           href={primaryHref}
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+          className="inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white sm:w-auto sm:flex-none"
         >
           {primaryLabel}
           <ArrowRightIcon />
@@ -101,7 +101,7 @@ function ServiceActions({ primaryLabel, primaryHref, knowMoreHref }) {
           href={primaryHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+          className="inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white sm:w-auto sm:flex-none"
         >
           {primaryLabel}
           <ArrowRightIcon />
@@ -109,7 +109,7 @@ function ServiceActions({ primaryLabel, primaryHref, knowMoreHref }) {
       )}
       <Link
         href={knowMoreHref}
-        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
+        className="inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)] sm:w-auto sm:flex-none"
       >
         Know More
         <ArrowRightIcon />
@@ -130,7 +130,7 @@ function ServiceContent({ service }) {
       <ul className="mt-4 space-y-2 text-[clamp(0.875rem,1.25vw,0.9375rem)] leading-relaxed text-[var(--muted-foreground)]">
         {service.bullets.map((bullet) => (
           <li key={bullet} className="flex gap-2">
-            <span className="shrink-0 text-[#2daa5a]" aria-hidden="true">
+            <span className="shrink-0 text-[#178A49]" aria-hidden="true">
               ✓
             </span>
             <span>{bullet}</span>
@@ -182,28 +182,28 @@ export function OurServicesSection({ services = defaultServices }) {
     >
       <h2
         id="our-services-heading"
-        className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-tight text-[var(--header-navy)]"
+        className="text-balance text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-tight text-[var(--header-navy)]"
       >
         Our Services
       </h2>
 
-      <div className="mt-10 flex flex-col gap-14 sm:mt-12 sm:gap-16 lg:mt-14 lg:gap-20">
+      <div className="mt-8 flex flex-col gap-12 sm:mt-10 sm:gap-16 lg:mt-14 lg:gap-20">
         {services.map((service) => {
           const imageFirst = service.imagePosition === "left";
 
           return (
             <article
               key={service.id}
-              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16"
+              className="grid min-w-0 grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16"
             >
-              <div className={imageFirst ? "order-1" : "order-1 lg:order-1"}>
+              <div className={imageFirst ? "order-2 lg:order-1" : "order-1 lg:order-1"}>
                 {imageFirst ? (
                   <ServiceImage service={service} />
                 ) : (
                   <ServiceContent service={service} />
                 )}
               </div>
-              <div className={imageFirst ? "order-2" : "order-2 lg:order-2"}>
+              <div className={imageFirst ? "order-1 lg:order-2" : "order-2 lg:order-2"}>
                 {imageFirst ? (
                   <ServiceContent service={service} />
                 ) : (

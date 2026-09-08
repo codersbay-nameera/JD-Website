@@ -3,7 +3,7 @@ import { pricingPlans } from "@/config/pricing-plans";
 function CheckIcon() {
   return (
     <span
-      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#2daa5a] text-xs font-bold text-white"
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#178A49] text-xs font-bold text-white"
       aria-hidden="true"
     >
       ✓
@@ -111,7 +111,7 @@ export default function PricingCardsSection() {
             Straight forward pricing for
             <br />
             all your{" "}
-            <span className="text-[#2daa5a]">deliveries</span>
+            <span className="text-[#178A49]">deliveries</span>
           </h1>
           <p className="mt-4 text-[clamp(1rem,1.8vw,1.125rem)] leading-relaxed text-[var(--header-navy)]">
             Know your trip cost upfront with clear, transparent pricing and no
@@ -120,7 +120,7 @@ export default function PricingCardsSection() {
 
           <a
             href="tel:+919619440499"
-            className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+            className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white"
           >
             <PhoneIcon />
             Talk to our expert

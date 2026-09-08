@@ -34,7 +34,7 @@ const whyBrandsChooseItems = [
 function CheckIcon() {
   return (
     <span
-      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#2daa5a] text-xs font-bold text-white"
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#178A49] text-xs font-bold text-white"
       aria-hidden="true"
     >
       ✓
@@ -172,7 +172,7 @@ export default function BuiltForGrowthSection({ onSpeakToTeamClick }) {
                 onClick={() => setActiveTab(tab.id)}
                 className={
                   isActive
-                    ? "rounded-full border border-[#2daa5a] bg-[#2daa5a] px-5 py-2.5 text-sm font-semibold text-white"
+                    ? "rounded-full border border-[#178A49] bg-[#178A49] px-5 py-2.5 text-sm font-semibold text-white"
                     : "rounded-full border border-[#DCE2E7] bg-white px-5 py-2.5 text-sm font-semibold text-[var(--header-navy)]"
                 }
               >
@@ -273,7 +273,7 @@ export default function BuiltForGrowthSection({ onSpeakToTeamClick }) {
                 href="https://quote.justdeliveries.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 py-3 text-sm font-semibold text-white"
+                className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#178A49] bg-[#178A49] px-5 py-3 text-sm font-semibold text-white"
               >
                 Get your customized quotation
                 <ArrowRightIcon />

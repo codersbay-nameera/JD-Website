@@ -32,8 +32,8 @@ function PlayIcon() {
     >
       <path
         d="M7 5.5L17 11L7 16.5V5.5Z"
-        fill="#2daa5a"
-        stroke="#2daa5a"
+        fill="#178A49"
+        stroke="#178A49"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />

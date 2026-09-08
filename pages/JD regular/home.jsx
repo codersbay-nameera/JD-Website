@@ -75,75 +75,77 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="min-w-0 overflow-x-clip">
       <section
         className="w-full min-w-0 max-w-full overflow-x-hidden pt-5 sm:pt-6 lg:pt-8"
         aria-label="JD Regular hero"
       >
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
-            <div className="flex min-h-0 min-w-0 flex-col justify-center gap-6">
-              <h1 className="text-[clamp(1.875rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em]">
-                <span className="text-[var(--header-navy)]">India’s Trusted </span>
-                <span className="text-[#2daa5a]">F&B</span>
-                <br />
-                <span className="text-[#2daa5a]">Logistics Partner</span>
-              </h1>
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-10">
+          <div className="flex min-h-0 min-w-0 flex-col justify-center gap-5 lg:gap-6">
+            <h1 className="text-balance text-[clamp(1.625rem,7vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em] lg:text-[clamp(1.875rem,3.5vw,3rem)]">
+              <span className="text-[var(--header-navy)]">India’s Trusted </span>
+              <span className="text-[#178A49]">F&B</span>
+              <br />
+              <span className="text-[#178A49]">Logistics Partner</span>
+            </h1>
 
-              <p className="max-w-xl text-[clamp(0.9375rem,1.5vw,1.125rem)] leading-relaxed text-[var(--header-navy)]">
-                Dedicated drivers and vehicles on annual contracts — built for
-                brands moving daily volume, at scale, across India.
-              </p>
+            <p className="max-w-xl text-[clamp(0.9375rem,1.5vw,1.125rem)] leading-[1.55] text-[var(--header-navy)] lg:leading-relaxed">
+              Dedicated drivers and vehicles on annual contracts — built for
+              brands moving daily volume, at scale, across India.
+            </p>
 
-              <dl className="grid grid-cols-2 gap-4 sm:gap-5">
-                {stats.map((stat) => (
-                  <div key={`${stat.value}-${stat.label}`}>
-                    <dt className="text-[clamp(1.375rem,2.5vw,1.75rem)] font-bold leading-tight text-[#178A49]">
-                      {stat.value}
-                    </dt>
-                    <dd className="mt-1 text-[clamp(0.8125rem,1.25vw,0.9375rem)] leading-snug text-[var(--muted-foreground)]">
-                      {stat.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-4 sm:gap-x-5 sm:gap-y-5">
+              {stats.map((stat) => (
+                <div key={`${stat.value}-${stat.label}`}>
+                  <dt className="text-[clamp(1.375rem,2.5vw,1.75rem)] font-bold leading-tight text-[#178A49]">
+                    {stat.value}
+                  </dt>
+                  <dd className="mt-1 text-[clamp(0.8125rem,1.25vw,0.9375rem)] leading-snug text-[var(--muted-foreground)]">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
 
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://quote.justdeliveries.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
-                >
-                  Get an Instant Quote
-                  <ArrowRightIcon />
-                </a>
-                <button
-                  type="button"
-                  onClick={openSpeakToTeamModal}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)]"
-                >
-                  Speak to Our Team
-                  <PhoneIcon />
-                </button>
-              </div>
-            </div>
-
-            <div className="flex h-full min-h-0 w-full items-center lg:items-stretch">
-              <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-3xl bg-white lg:aspect-[16/11]">
-                <Image
-                  src={jdRegularImage}
-                  alt="Just Deliveries logistics truck for food and beverage brand distribution across India"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
+            <div className="flex w-full flex-col gap-3 lg:flex-row lg:flex-wrap">
+              <a
+                href="https://quote.justdeliveries.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white lg:w-auto"
+              >
+                Get an Instant Quote
+                <ArrowRightIcon />
+              </a>
+              <button
+                type="button"
+                onClick={openSpeakToTeamModal}
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--header-navy)] bg-white px-5 text-sm font-semibold text-[var(--header-navy)] lg:w-auto"
+              >
+                Speak to Our Team
+                <PhoneIcon />
+              </button>
             </div>
           </div>
+
+          <div className="flex h-full min-h-0 w-full items-center lg:items-stretch">
+            <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-2xl bg-white lg:aspect-[16/11] lg:rounded-3xl">
+              <Image
+                src={jdRegularImage}
+                alt="Just Deliveries logistics truck for food and beverage brand distribution across India"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
-      <TrustedBrandsSection />
+      <div className="jd-regular-trusted-brands">
+        <TrustedBrandsSection />
+      </div>
       <OneContract />
       <BuiltForBrands />
       <ReliableDelivery />
@@ -155,6 +157,6 @@ export default function Home() {
         isOpen={isSpeakToTeamModalOpen}
         onClose={closeSpeakToTeamModal}
       />
-    </>
+    </div>
   );
 }

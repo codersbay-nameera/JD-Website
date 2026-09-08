@@ -22,7 +22,7 @@ const features = [
 function CheckIcon() {
   return (
     <span
-      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#2daa5a] text-xs font-bold text-white"
+      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#178A49] text-xs font-bold text-white"
       aria-hidden="true"
     >
       ✓
@@ -82,7 +82,7 @@ export default function FleetDeliveryControlSection() {
             </ul>
             <a
               href="#"
-              className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-white px-5 text-sm font-semibold text-[#2daa5a]"
+              className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-white px-5 text-sm font-semibold text-[#178A49]"
             >
               See a live demo
               <ArrowRightIcon />

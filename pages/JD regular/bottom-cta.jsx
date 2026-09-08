@@ -44,8 +44,8 @@ function PhoneIcon() {
 export default function BottomCta({ onSpeakToTeamClick }) {
   return (
     <section aria-label="Ready to move your cold chain">
-      <div className="pb-16 pt-4">
-        <div className="relative overflow-hidden rounded-[42px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+      <div className="pb-10 pt-4 lg:pb-16">
+        <div className="relative overflow-hidden rounded-[32px] bg-[#193663] px-5 py-8 sm:rounded-[42px] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <div
             className="pointer-events-none absolute top-0 right-0 h-44 w-44 opacity-20"
             aria-hidden="true"
@@ -114,12 +114,12 @@ export default function BottomCta({ onSpeakToTeamClick }) {
               </p>
             </div>
 
-            <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            <div className="flex w-full shrink-0 flex-col gap-3 lg:w-auto lg:flex-row lg:items-center">
               <a
                 href="https://quote.justdeliveries.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold whitespace-nowrap text-white"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white lg:w-auto lg:whitespace-nowrap"
               >
                 Get an instant quote
                 <ArrowRightIcon />
@@ -127,7 +127,7 @@ export default function BottomCta({ onSpeakToTeamClick }) {
               <button
                 type="button"
                 onClick={onSpeakToTeamClick}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold whitespace-nowrap text-white"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-white/40 bg-transparent px-5 text-sm font-semibold text-white lg:w-auto lg:whitespace-nowrap"
               >
                 <PhoneIcon />
                 Talk to our expert

@@ -8,7 +8,7 @@ export default function CaseStudyCard({ study }) {
           <p className="min-w-0 flex-1 whitespace-pre-line text-sm font-semibold leading-snug text-white">
             {study.visualTitle}
           </p>
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#2daa5a] bg-white sm:h-16 sm:w-16">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#178A49] bg-white sm:h-16 sm:w-16">
             <Image
               src={study.image}
               alt={study.imageAlt}
@@ -37,7 +37,7 @@ export default function CaseStudyCard({ study }) {
           </h3>
 
           <p className="mt-3 text-sm text-[var(--muted-foreground)]">
-            <span className="text-[#2daa5a]">Case Study</span>
+            <span className="text-[#178A49]">Case Study</span>
             <span aria-hidden="true"> · </span>
             <span>By {study.author}</span>
           </p>

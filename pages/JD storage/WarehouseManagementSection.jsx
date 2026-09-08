@@ -13,7 +13,7 @@ const checklistItems = [
 function CheckIcon() {
   return (
     <span
-      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#2daa5a] text-xs font-bold text-white"
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-[#178A49] text-xs font-bold text-white"
       aria-hidden="true"
     >
       ✓
@@ -70,7 +70,7 @@ export default function WarehouseManagementSection() {
               href="https://wms.justdeliveries.ai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+              className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white"
             >
               See a live demo
               <ArrowRightIcon />

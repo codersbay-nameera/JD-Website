@@ -138,7 +138,7 @@ export default function JoinCtaSection() {
                 </p>
                 <a
                   href="#"
-                  className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 py-3 text-sm font-semibold text-white"
+                  className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#178A49] bg-[#178A49] px-5 py-3 text-sm font-semibold text-white"
                 >
                   Join Now
                   <ArrowRightIcon />

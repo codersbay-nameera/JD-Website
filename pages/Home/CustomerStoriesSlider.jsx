@@ -70,10 +70,14 @@ const defaultStories = [
   },
 ];
 
-function StoryCard({ story, ariaHidden = false }) {
+function StoryCard({ story, ariaHidden = false, homeMobileLayout = false }) {
   return (
     <article
-      className="relative flex h-[240px] w-[min(260px,calc(100vw-4rem))] shrink-0 flex-col rounded-[24px] border border-[#dce4ee] bg-white p-6 sm:h-[260px] sm:w-[min(330px,calc(100vw-4rem))] md:h-[275px] md:w-[min(480px,calc(100vw-4rem))] lg:h-[291px] lg:w-[640px] sm:p-7 lg:p-8"
+      className={
+        homeMobileLayout
+          ? "relative flex h-[260px] w-full max-w-none shrink-0 flex-col rounded-[24px] border border-[#dce4ee] bg-white p-6 md:h-[275px] md:w-[min(480px,calc(100vw-4rem))] lg:h-[291px] lg:w-[640px] md:p-7 lg:p-8"
+          : "relative flex h-[240px] w-[min(260px,calc(100vw-4rem))] shrink-0 flex-col rounded-[24px] border border-[#dce4ee] bg-white p-6 sm:h-[260px] sm:w-[min(330px,calc(100vw-4rem))] md:h-[275px] md:w-[min(480px,calc(100vw-4rem))] lg:h-[291px] lg:w-[640px] sm:p-7 lg:p-8"
+      }
       aria-hidden={ariaHidden || undefined}
     >
       <div
@@ -116,10 +120,14 @@ function StoryCard({ story, ariaHidden = false }) {
             </div>
           ) : null}
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-[var(--header-navy)] sm:text-[15px]">
+            <p
+              className={`truncate text-sm font-semibold text-[var(--header-navy)] sm:text-[15px] ${
+                homeMobileLayout ? "max-md:whitespace-normal" : ""
+              }`}
+            >
               {story.brand}
             </p>
-            <p className="mt-0.5 text-xs leading-snug text-[#2daa5a] sm:text-[13px]">
+            <p className="mt-0.5 text-xs leading-snug text-[#178A49] sm:text-[13px]">
               {story.category}
             </p>
           </div>
@@ -132,6 +140,7 @@ function StoryCard({ story, ariaHidden = false }) {
 export function CustomerStoriesSlider({
   stories = defaultStories,
   heading = "Trusted by India’s best F&B brands",
+  homeMobileLayout = false,
 }) {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [activeDot, setActiveDot] = useState(0);
@@ -171,29 +180,47 @@ export function CustomerStoriesSlider({
 
   return (
     <section
-      className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-hidden bg-[#EEF4F8] py-10 sm:py-12 lg:py-16"
+      className={`relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#EEF4F8] py-10 sm:py-12 lg:py-16 ${
+        homeMobileLayout ? "max-w-[100vw]" : "max-w-none"
+      }`}
       aria-labelledby="customer-stories-heading"
     >
       <div className="page-layout-padding">
         <h2
           id="customer-stories-heading"
-          className="text-center text-[clamp(1.5rem,3vw,2rem)] font-bold leading-snug text-[var(--header-navy)]"
+          className={`text-balance text-center font-bold leading-snug ${
+            homeMobileLayout
+              ? "text-[clamp(1.25rem,5vw,2rem)] text-[#19305A] md:text-[clamp(1.5rem,3vw,2rem)] md:text-[var(--header-navy)]"
+              : "text-[clamp(1.5rem,3vw,2rem)] text-[var(--header-navy)]"
+          }`}
         >
           {heading}
         </h2>
       </div>
 
-      <div className="relative mt-8 overflow-hidden sm:mt-10">
+      <div
+        className={`relative w-full overflow-hidden ${
+          homeMobileLayout ? "mt-6 page-layout-padding sm:mt-10 md:px-0" : "mt-8 sm:mt-10"
+        }`}
+      >
         <div
-          className={`customer-stories-track flex w-max items-stretch gap-4 sm:gap-5 ${
-            prefersReducedMotion ? "" : "customer-stories-animate"
-          }`}
+          className={`customer-stories-track flex w-max items-stretch ${
+            homeMobileLayout ? "gap-0 md:gap-5" : "gap-4 sm:gap-5"
+          } ${prefersReducedMotion ? "" : "customer-stories-animate"}`}
           role="list"
           aria-label="Customer testimonials"
         >
           {stories.map((story) => (
-            <div key={story.id} role="listitem" className="h-auto">
-              <StoryCard story={story} />
+            <div
+              key={story.id}
+              role="listitem"
+              className={
+                homeMobileLayout
+                  ? "h-auto shrink-0 max-md:w-[calc(100vw-3rem)] md:w-auto"
+                  : "h-auto"
+              }
+            >
+              <StoryCard story={story} homeMobileLayout={homeMobileLayout} />
             </div>
           ))}
 
@@ -201,10 +228,14 @@ export function CustomerStoriesSlider({
             <div
               key={`${story.id}-duplicate`}
               role="listitem"
-              className="h-auto"
+              className={
+                homeMobileLayout
+                  ? "h-auto shrink-0 max-md:w-[calc(100vw-3rem)] md:w-auto"
+                  : "h-auto"
+              }
               aria-hidden="true"
             >
-              <StoryCard story={story} ariaHidden />
+              <StoryCard story={story} ariaHidden homeMobileLayout={homeMobileLayout} />
             </div>
           ))}
         </div>
@@ -229,7 +260,7 @@ export function CustomerStoriesSlider({
                 tabIndex={isActive ? 0 : -1}
                 className={
                   isActive
-                    ? "h-2.5 w-2.5 rounded-full border-0 bg-[var(--header-navy)] p-0"
+                    ? "h-2.5 w-2.5 rounded-full border-0 bg-[#178A49] p-0"
                     : "h-2.5 w-2.5 rounded-full border-0 bg-[#c5d0dc] p-0"
                 }
                 onClick={() => setActiveDot(index)}

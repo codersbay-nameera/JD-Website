@@ -113,10 +113,22 @@ function FooterLink({ item }) {
   );
 }
 
+function FooterColumnHeading({ title }) {
+  return (
+    <p className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wide text-[var(--header-navy)] lg:mb-4">
+      <span
+        className="inline-block h-px w-5 shrink-0 bg-[var(--header-navy)] lg:hidden"
+        aria-hidden="true"
+      />
+      {title}
+    </p>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="mt-auto bg-[#EEF3F8]">
-      <div className="page-layout-padding w-full pt-12 pb-6 sm:pt-14 sm:pb-8">
+    <footer className="mt-auto min-w-0 overflow-hidden bg-[#EEF3F8]">
+      <div className="page-layout-padding w-full min-w-0 pt-12 pb-6 sm:pt-14 sm:pb-8">
         <div className="max-w-xl">
           <Link href="/" aria-label={`${siteConfig.name} home`}>
             <Image
@@ -132,13 +144,11 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-10">
+        <div className="mt-8 grid min-w-0 grid-cols-2 gap-x-6 gap-y-8 lg:mt-12 lg:grid-cols-4 lg:gap-10">
           {footerColumns.map((column) => (
-            <nav key={column.title} aria-label={column.title}>
-              <p className="mb-4 text-sm font-semibold tracking-wide text-[var(--header-navy)]">
-                {column.title}
-              </p>
-              <ul className="space-y-3">
+            <nav key={column.title} aria-label={column.title} className="min-w-0">
+              <FooterColumnHeading title={column.title} />
+              <ul className="space-y-2.5 lg:space-y-3">
                 {column.items.map((item) => (
                   <li key={item.label}>
                     <FooterLink item={item} />
@@ -149,42 +159,42 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 lg:mt-12">
-          <p className="text-sm font-semibold text-[var(--header-navy)]">
-            Stay Updated
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {appDownloads.map((app) => (
-              <a
-                key={app.label}
-                href={app.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0"
-                aria-label={app.label}
-              >
-                <Image
-                  src={app.src}
-                  alt={app.label}
-                  width={app.width}
-                  height={app.height}
-                  className="h-10 w-[135px] object-contain"
-                />
-              </a>
-            ))}
+        <div className="mt-8 min-w-0 lg:mt-12">
+          <div className="flex flex-col gap-4 max-lg:flex-row max-lg:flex-wrap max-lg:items-center max-lg:justify-between lg:block">
+            <p className="shrink-0 text-sm font-semibold text-[var(--header-navy)]">
+              Stay Updated
+            </p>
+            <div className="flex min-w-0 flex-wrap gap-2.5 sm:gap-3 lg:mt-4">
+              {appDownloads.map((app) => (
+                <a
+                  key={app.label}
+                  href={app.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0"
+                  aria-label={app.label}
+                >
+                  <Image
+                    src={app.src}
+                    alt={app.label}
+                    width={app.width}
+                    height={app.height}
+                    className="h-10 w-[min(135px,calc(50vw-2.5rem))] object-contain sm:w-[135px] lg:h-10 lg:w-[135px]"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         <div
-          className="mt-10 border-t border-[var(--header-border)] pt-6 sm:mt-12"
+          className="mt-8 border-t border-[var(--header-border)] pt-6 lg:mt-12"
           aria-label="Footer legal"
         >
-          <div className="flex flex-col gap-4 text-sm leading-relaxed text-[var(--header-nav-text)] sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <p>
+          <div className="flex flex-col gap-4 text-sm leading-relaxed text-[var(--header-nav-text)] lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+            <p className="text-balance">
               © 2026 JustDeliveries. Questions? We&apos;re just a call away —{" "}
-              <a href="tel:+919619440499" className="whitespace-nowrap">
-                +91 96194 40499
-              </a>
+              <a href="tel:+919619440499">+91 96194 40499</a>
             </p>
 
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1">

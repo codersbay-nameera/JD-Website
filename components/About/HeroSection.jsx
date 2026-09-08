@@ -20,7 +20,7 @@ export default function HeroSection() {
                 There&apos;s a reason we&apos;re
                 <br />
               </span>
-              <span className="text-[#2daa5a]">good</span>
+              <span className="text-[#178A49]">good</span>
               <span className="text-[var(--header-navy)]"> at what we do.</span>
             </h1>
 

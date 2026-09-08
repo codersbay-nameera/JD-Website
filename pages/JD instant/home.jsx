@@ -18,7 +18,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row lg:items-start">
           <div className="page-layout-padding pt-12 lg:w-[48%] lg:max-w-[750px] lg:shrink-0 lg:pt-[82px]">
             <h1 className="text-[clamp(1.875rem,3.6vw,3.125rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#193663]">
-              <span className="text-[#168D4F]">Pay per use</span>
+              <span className="text-[#178A49]">Pay per use</span>
               {" chilled and"}
               <br />
               frozen vehicles - book
@@ -39,7 +39,7 @@ export default function Home() {
             <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-6 sm:gap-x-[220px]">
               {metrics.map((metric) => (
                 <div key={metric.value}>
-                  <dt className="text-[29px] font-bold leading-[1.1] text-[#168D4F]">
+                  <dt className="text-[29px] font-bold leading-[1.1] text-[#178A49]">
                     {metric.value}
                   </dt>
                   <dd className="mt-1 text-[18px] font-normal leading-snug text-[#193663]">

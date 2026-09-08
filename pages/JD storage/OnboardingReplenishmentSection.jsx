@@ -41,7 +41,7 @@ export default function OnboardingReplenishmentSection() {
               ) : null}
               <div className="flex items-start gap-5 sm:gap-6">
                 <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#159447] text-xl font-bold text-white"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#178A49] text-xl font-bold text-white"
                   aria-hidden="true"
                 >
                   {step.number}

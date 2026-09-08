@@ -39,7 +39,7 @@ export default function HeroSection({ onSpeakToTeamClick }) {
             <h1 className="text-[clamp(1.875rem,3.5vw,3rem)] font-bold leading-[1.15] tracking-[-0.02em]">
               <span className="text-[var(--header-navy)]">Add your vehicle.</span>
               <br />
-              <span className="text-[#2daa5a]">Earn</span>
+              <span className="text-[#178A49]">Earn</span>
               <span className="text-[var(--header-navy)]"> more.</span>
             </h1>
 
@@ -64,7 +64,7 @@ export default function HeroSection({ onSpeakToTeamClick }) {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold text-white"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold text-white"
               >
                 Join Now
                 <ArrowRightIcon />

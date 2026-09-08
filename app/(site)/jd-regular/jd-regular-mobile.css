@@ -1,0 +1,12 @@
+@media (max-width: 1023px) {
+  body.jd-regular-page #main-content > .page-layout-padding {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  body.jd-regular-page .jd-regular-trusted-brands h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+    line-height: 1.35;
+  }
+}

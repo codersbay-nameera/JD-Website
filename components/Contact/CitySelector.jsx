@@ -12,7 +12,7 @@ export default function CitySelector({ cities, selectedCity, onSelect }) {
             aria-pressed={isActive}
             className={
               isActive
-                ? "rounded-full border border-[#2daa5a] bg-[#2daa5a] px-5 py-2.5 text-sm font-semibold text-white"
+                ? "rounded-full border border-[#178A49] bg-[#178A49] px-5 py-2.5 text-sm font-semibold text-white"
                 : "rounded-full border border-[#DCE2E7] bg-white px-5 py-2.5 text-sm font-semibold text-[var(--header-navy)]"
             }
           >

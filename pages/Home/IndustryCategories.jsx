@@ -83,31 +83,31 @@ export function IndustryCategories({ categories = defaultCategories }) {
     >
       <h2
         id="industry-categories-heading"
-        className="mx-auto max-w-4xl text-center text-[clamp(1.25rem,2.5vw,1.75rem)] font-bold leading-snug text-[var(--header-navy)]"
+        className="mx-auto max-w-4xl text-balance px-1 text-center text-[clamp(1.125rem,4.5vw,1.75rem)] font-bold leading-[1.35] text-[#19305A] md:text-[clamp(1.25rem,2.5vw,1.75rem)] md:leading-snug md:text-[var(--header-navy)]"
       >
         If your product is temperature sensitive, time sensitive or hygiene
         sensitive, JD is the best solution
       </h2>
 
-      <ul className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      <ul className="mt-6 grid min-w-0 grid-cols-2 gap-3 sm:mt-8 sm:gap-5 md:mt-10 lg:mt-12 lg:grid-cols-3 lg:gap-6">
         {categories.map((category) => (
-          <li key={category.id}>
+          <li key={category.id} className="min-w-0">
             <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e2e8f0] bg-white">
               {category.image ? (
-                <div className="p-3 pb-0 sm:p-4 sm:pb-0">
+                <div className="p-2 pb-0 sm:p-4 sm:pb-0">
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
                     <Image
                       src={category.image}
                       alt={category.imageAlt}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 1024px) 44vw, 33vw"
                       className="object-cover"
                     />
                   </div>
                 </div>
               ) : null}
 
-              <div className="relative mt-auto px-4 py-4 sm:px-5 sm:py-5">
+              <div className="relative mt-auto px-3 py-3 sm:px-5 sm:py-5">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-35"
                   style={{
@@ -117,7 +117,7 @@ export function IndustryCategories({ categories = defaultCategories }) {
                   }}
                   aria-hidden="true"
                 />
-                <h3 className="relative text-center text-[clamp(0.9375rem,1.5vw,1.0625rem)] font-semibold text-[var(--header-navy)]">
+                <h3 className="relative text-balance text-center text-[clamp(0.8125rem,3.2vw,1.0625rem)] font-semibold leading-snug text-[var(--header-navy)]">
                   {category.title}
                 </h3>
               </div>

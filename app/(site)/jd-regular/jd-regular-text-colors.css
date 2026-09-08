@@ -1,0 +1,23 @@
+body.jd-regular-page {
+  color: #19305a;
+}
+
+body.jd-regular-page .text-foreground {
+  color: #19305a;
+}
+
+body.jd-regular-page .text-\[var\(--header-navy\)\] {
+  color: #19305a;
+}
+
+body.jd-regular-page .text-\[var\(--header-nav-text\)\] {
+  color: #19305a;
+}
+
+body.jd-regular-page .text-\[var\(--muted-foreground\)\] {
+  color: #19305a;
+}
+
+body.jd-regular-page .text-black {
+  color: #19305a;
+}

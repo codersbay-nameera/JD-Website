@@ -55,7 +55,7 @@ export default function CaseStudyDetail({ detail }) {
               {detail.heroVisualTitle}
             </h1>
 
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border-4 border-[#2daa5a] lg:aspect-[16/11]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border-4 border-[#178A49] lg:aspect-[16/11]">
               <Image
                 src={detail.heroImage}
                 alt={detail.heroImageAlt}
@@ -83,7 +83,7 @@ export default function CaseStudyDetail({ detail }) {
           <p className="mt-3 text-sm text-[var(--muted-foreground)]">
             <span>Leave a Comment</span>
             <span aria-hidden="true"> · </span>
-            <span className="text-[#2daa5a]">Case Study</span>
+            <span className="text-[#178A49]">Case Study</span>
             <span aria-hidden="true"> · </span>
             <span>By {detail.author}</span>
           </p>

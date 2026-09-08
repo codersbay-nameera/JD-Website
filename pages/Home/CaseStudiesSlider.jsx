@@ -112,7 +112,7 @@ function CaseStudyCard({ study }) {
           <p className="min-w-0 flex-1 text-sm font-semibold leading-snug text-white">
             {study.visualTitle}
           </p>
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#2daa5a] bg-white sm:h-16 sm:w-16">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 border-[#178A49] bg-white sm:h-16 sm:w-16">
             <Image
               src={study.image}
               alt={study.imageAlt}
@@ -141,7 +141,7 @@ function CaseStudyCard({ study }) {
           </h3>
 
           <p className="mt-3 text-sm text-[var(--muted-foreground)]">
-            <span className="text-[#2daa5a]">Case Study</span>
+            <span className="text-[#178A49]">Case Study</span>
             <span aria-hidden="true"> · </span>
             <span>By {study.author}</span>
           </p>
@@ -153,7 +153,7 @@ function CaseStudyCard({ study }) {
 
           <Link
             href={study.href}
-            className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2daa5a]"
+            className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#178A49]"
           >
             Read full story
             <span aria-hidden="true">→</span>
@@ -206,7 +206,7 @@ export function CaseStudiesSlider({ caseStudies = defaultCaseStudies }) {
     >
       <h2
         id="case-studies-heading"
-        className="text-center text-[clamp(1.25rem,2.5vw,1.75rem)] font-bold leading-snug text-[var(--header-navy)]"
+        className="text-balance px-1 text-center text-[clamp(1.25rem,2.5vw,1.75rem)] font-bold leading-snug text-[var(--header-navy)]"
       >
         Real results. Real business impact.
       </h2>
@@ -278,7 +278,7 @@ export function CaseStudiesSlider({ caseStudies = defaultCaseStudies }) {
               onClick={() => goToPage(pageIndex)}
               className={`h-2.5 w-2.5 rounded-full ${
                 pageIndex === currentPage
-                  ? "bg-[var(--header-navy)]"
+                  ? "bg-[#178A49]"
                   : "bg-[#c5d4e3]"
               }`}
             />

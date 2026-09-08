@@ -57,13 +57,13 @@ export function TrustedBrandsSection({
       className="w-full min-w-0 overflow-hidden py-10 sm:py-12"
       aria-label="Trusted brands"
     >
-      <h2 className="mb-8 text-center text-[clamp(1.25rem,2.5vw,1.75rem)] font-bold leading-snug text-[var(--header-navy)] sm:mb-10">
+      <h2 className="mb-8 text-balance px-1 text-center text-[clamp(1.25rem,2.5vw,1.75rem)] font-bold leading-snug text-[var(--header-navy)] sm:mb-10">
         {heading}
       </h2>
 
       <div className="relative overflow-hidden">
         <div
-          className={`trusted-brands-track flex w-max items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 ${
+          className={`trusted-brands-track flex w-max items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 ${
             prefersReducedMotion ? "" : "trusted-brands-animate"
           }`}
           role="list"
@@ -73,7 +73,7 @@ export function TrustedBrandsSection({
             <div
               key={brand.name}
               role="listitem"
-              className="flex h-10 w-24 shrink-0 items-center justify-center sm:h-12 sm:w-28 md:h-14 md:w-32 lg:h-16 lg:w-36"
+              className="flex h-9 w-20 shrink-0 items-center justify-center sm:h-10 sm:w-24 md:h-14 md:w-32 lg:h-16 lg:w-36"
             >
               <Image
                 src={brand.logo}
@@ -89,7 +89,7 @@ export function TrustedBrandsSection({
             <div
               key={`${brand.name}-duplicate`}
               aria-hidden="true"
-              className="flex h-10 w-24 shrink-0 items-center justify-center sm:h-12 sm:w-28 md:h-14 md:w-32 lg:h-16 lg:w-36"
+              className="flex h-9 w-20 shrink-0 items-center justify-center sm:h-10 sm:w-24 md:h-14 md:w-32 lg:h-16 lg:w-36"
             >
               <Image
                 src={brand.logo}

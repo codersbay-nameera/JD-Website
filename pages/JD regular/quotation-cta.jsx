@@ -65,8 +65,8 @@ function PhoneIcon() {
 export default function QuotationCta() {
   return (
     <section aria-label="Get your quote">
-      <div className="pb-16 pt-10">
-        <div className="relative overflow-hidden rounded-[42px] bg-[#193663] px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+      <div className="pb-10 pt-8 lg:pb-16 lg:pt-10">
+        <div className="relative overflow-hidden rounded-[32px] bg-[#193663] px-5 py-8 sm:rounded-[42px] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <div
             className="pointer-events-none absolute top-0 right-0 h-40 w-40 opacity-20"
             aria-hidden="true"
@@ -143,7 +143,7 @@ export default function QuotationCta() {
                 href="https://quote.justdeliveries.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 py-3 text-sm font-semibold text-white"
+                className="mt-6 flex w-full items-center justify-between gap-3 rounded-lg border border-[#178A49] bg-[#178A49] px-5 py-3 text-sm font-semibold text-white"
               >
                 Open Quotation Calculator
                 <ArrowRightIcon />

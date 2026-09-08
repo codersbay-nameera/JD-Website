@@ -123,7 +123,7 @@ export default function ReadyCtaSection({ onSpeakToTeamClick, quoteHref = "#" })
                 {...(isExternalQuoteLink
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#2daa5a] bg-[#2daa5a] px-5 text-sm font-semibold whitespace-nowrap text-white"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#178A49] bg-[#178A49] px-5 text-sm font-semibold whitespace-nowrap text-white"
               >
                 Get a quotation
                 <ArrowRightIcon />
